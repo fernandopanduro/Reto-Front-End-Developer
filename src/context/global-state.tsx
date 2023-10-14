@@ -6,7 +6,7 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }: any) => {
   const { data } = useFetch(
-    "http://localhost:3000/transactions?_sort=createdAt"
+    "http://localhost:3000/transactions?_sort=createdAt&_order=desc"
   );
   const [state, dispatch] = useReducer(AppReducer, { transactions: [] });
   const [filteredTransactions, setFilteredTransactions] = useState();
@@ -41,28 +41,31 @@ export const GlobalProvider = ({ children }: any) => {
   ) => {
     return transactions.filter(transaction => {
       const transactionDate = new Date(transaction.createdAt);
-      /* console.log(transactionDate.getMonth());
-      console.log("Target Month", targetMonth); */
       return transactionDate.getMonth() === targetMonth;
     });
   };
 
   useEffect(() => {
     if (data) {
-      console.log(selectedMonth);
       setFilteredTransactions(
         selectedMonth !== null
           ? filterTransactionsByMonth(data, selectedMonth)
           : filterTransactionsByMonth(data, currentMonth)
       );
-      console.log(filteredTransactions);
     }
-  }, [data, selectedMonth]);
+  }, [data, selectedMonth, state]);
+
+  useEffect(() => {
+    setFilteredTransactions(
+      selectedMonth !== null
+        ? filterTransactionsByMonth(state.transactions, selectedMonth)
+        : filterTransactionsByMonth(state.transactions, currentMonth)
+    );
+  }, [state, selectedMonth]);
 
   return (
     <GlobalContext.Provider
       value={{
-        transactions: state.transactions,
         deleteTransaction,
         addTransaction,
         filteredTransactions,

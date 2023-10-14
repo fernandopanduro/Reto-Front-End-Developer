@@ -31,8 +31,6 @@ const TransactionsList = (props: Props) => {
   const handleMonthClick = (month: number, index: number) => {
     setSelectedMonth(month + 1);
     setActiveMonthIndex(index + 1);
-    console.log("index", index);
-    console.log("month", month);
   };
 
   return (
@@ -42,7 +40,9 @@ const TransactionsList = (props: Props) => {
           <ul className="d-flex justify-content-center align-items-center gap-5 overflow-x-auto">
             {monthNames.map((monthName, index) => (
               <li
-                className={index + 1 === activeMonthIndex ? "fs-4" : "fs-6"}
+                className={`tra ${
+                  index + 1 === activeMonthIndex ? "fs-4" : "fs-6"
+                }`}
                 key={index}
                 onClick={() => handleMonthClick(index, index)}>
                 {monthName}

@@ -1,12 +1,6 @@
 {
   "transactions": [
     {
-      "id": "transaction_2023_1_1",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "amount": 55
-    },
-    {
       "id": "transaction_2023_1_2",
       "text": "Ejemplo de transacción",
       "createdAt": "2023-01-02T00:00:00.000Z",

@@ -10,7 +10,6 @@ function App() {
         <Balance />
         <div>
           <div className="d-flex flex-column gap-2">
-            <p className="mb-0 fw-bold">Today - 8 Dic</p>
             <TransactionsList />
           </div>
         </div>
