@@ -35,13 +35,13 @@ const TransactionsList = (props: Props) => {
 
   return (
     <>
-      <header className="fixed-top w-100 px-5 py-3">
+      <header className="fixed-top">
         <nav>
-          <ul className="d-flex justify-content-center align-items-center gap-5 overflow-x-auto">
+          <ul className="d-flex gap-5">
             {monthNames.map((monthName, index) => (
               <li
-                className={`tra ${
-                  index + 1 === activeMonthIndex ? "fs-4" : "fs-6"
+                className={`item-month ${
+                  index + 1 === activeMonthIndex ? "item-month--current" : ""
                 }`}
                 key={index}
                 onClick={() => handleMonthClick(index, index)}>

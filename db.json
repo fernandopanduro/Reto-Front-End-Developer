@@ -178,7 +178,13 @@
       "id": "b9ff9ad3-d8e3-4e2f-9827-a71db8b41ace",
       "text": "Uber",
       "createdAt": "2023-10-14T02:58:16.221Z",
-      "amount": 4545
+      "amount": 573
+    },
+    {
+      "id": "15b49ccd-1827-4f1d-82b0-e6eaec4db219",
+      "text": "Cena",
+      "createdAt": "2023-10-14T03:47:00.716Z",
+      "amount": -200
     }
   ]
 }

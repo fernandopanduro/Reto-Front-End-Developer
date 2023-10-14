@@ -35,7 +35,9 @@ function ModalForm() {
   };
   return (
     <>
-      <Button onClick={handleShow} className="fw-bold">
+      <Button
+        onClick={handleShow}
+        className="fw-bold btn-modal fixed-bottom mb-4 w-75 mx-auto">
         Agregar Movimiento
       </Button>
 
@@ -47,30 +49,31 @@ function ModalForm() {
         size="sm"
         keyboard={false}>
         <Modal.Header closeButton>
-          <Modal.Title className="fw-bold">Agregar Movimiento</Modal.Title>
+          <Modal.Title className="fw-bold acent fs-2">
+            Agregar Transacción
+          </Modal.Title>
         </Modal.Header>
         <form onSubmit={onSubmit}>
-          <Modal.Body className="d-flex flex-column gap-2">
-            <div className="d-flex flex-column gap-1">
-              <label htmlFor="name" className="fw-bold w-25 mb-0">
-                Nombre:{" "}
-              </label>
+          <Modal.Body className="d-flex flex-column gap-4">
+            <div className="form__group">
               <input
-                maxLength={20}
                 value={text}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setText(e.target.value)
                 }
-                id="name"
                 type="text"
-                placeholder="Uber"
-                className="w-100"
+                className="form__input"
+                name="name"
+                id="input-name"
+                placeholder=" "
+                maxLength={15}
+                required
               />
-            </div>
-            <div className="d-flex flex-column gap-1">
-              <label htmlFor="amount" className="fw-bold w-25 mb-0">
-                Monto:
+              <label htmlFor="input-name" className="form__label">
+                Nombre*
               </label>
+            </div>
+            <div className="form__group">
               <input
                 value={amount}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -78,17 +81,23 @@ function ModalForm() {
                 }
                 id="amount"
                 type="number"
-                placeholder="500"
-                className="w-100"
+                className="form__input"
+                name="name"
+                placeholder=" "
+                maxLength={7}
+                required
               />
+              <label htmlFor="amount" className="form__label">
+                Monto*
+              </label>
             </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Cancelar
             </Button>
-            <Button type="submit" variant="primary">
-              Crear
+            <Button type="submit" className="btn-modal">
+              Agregar Transacción
             </Button>
           </Modal.Footer>
         </form>

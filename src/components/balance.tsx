@@ -24,7 +24,7 @@ const Balance = (props: Props) => {
     <div className="p-4 rounded-4 shadow bg-white d-flex flex-column gap-3">
       <div>
         <h1 className="fs-6 text-center mb-0">Balance del mes</h1>
-        <p className="text-primary text-center fw-bold fs-1 mb-0">${total}</p>
+        <p className="total-balance text-center fw-bold fs-1 mb-0">${total}</p>
       </div>
       <div className="d-flex justify-content-between">
         <div className="d-flex flex-column align-items-center w-100 border-end">

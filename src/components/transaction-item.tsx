@@ -17,7 +17,8 @@ const TransactionItem = ({ label, amount, id }: Props) => {
         <h3 className="fs-6 mb-0">{label}</h3>
       </div>
       <div>
-        <p className={`fs-6 mb-0 ${isPositiveAmount ? "green" : "red"}`}>
+        <p
+          className={`fs-6 fw-bold mb-0 ${isPositiveAmount ? "green" : "red"}`}>
           {isPositiveAmount ? "+" : "-"}${Math.abs(amount).toFixed(2)}
         </p>
       </div>
