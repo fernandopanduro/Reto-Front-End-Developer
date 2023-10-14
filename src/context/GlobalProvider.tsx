@@ -5,12 +5,12 @@ import {
   useReducer,
   useState,
 } from "react";
+import { API_BASE_URL } from "../constants";
 import { useFetch } from "../hooks/useFetch";
 import { Transaction, Transactions } from "../types/globals";
 import AppReducer from "./app-reducer";
 
-const API_URL =
-  "http://localhost:3000/transactions?_sort=createdAt&_order=desc";
+const API_URL = `${API_BASE_URL}?_sort=createdAt&_order=desc`;
 
 const initialState: Transactions = {
   transactions: [],

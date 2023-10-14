@@ -3,11 +3,14 @@ import ModalForm from "./components/modal-form";
 import TransactionsList from "./components/transactions-list";
 import { useContextTransactions } from "./hooks/useContext";
 
+import { Toaster } from "sonner";
+
 function App() {
   const { currentMonth, selectedMonth } = useContextTransactions();
 
   return (
     <>
+      <Toaster position="top-center" richColors />
       <main className="d-flex flex-column gap-4">
         <Balance />
         <div>
