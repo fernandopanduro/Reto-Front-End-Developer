@@ -1,6 +1,6 @@
 # Reto Front End Developer para Disrupción MX
 
-Este proyecto es parte de un reto para el puesto de Front End Developer en Disrupción MX.
+Este proyecto es parte de un reto para Disrupción MX.
 
 ## Descargar e Iniciar el Proyecto
 
