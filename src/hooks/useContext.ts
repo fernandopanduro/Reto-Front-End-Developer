@@ -1,6 +1,5 @@
-import { GlobalContext } from "../context/global-state";
-import { useContext} from 'react'
-
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalProvider";
 
 export function useContextTransactions() {
   const context = useContext(GlobalContext);
@@ -9,5 +8,5 @@ export function useContextTransactions() {
     throw new Error("useContext not found");
   }
 
-  return context
+  return context;
 }

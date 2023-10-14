@@ -1,4 +1,3 @@
-import "./App.css";
 import Balance from "./components/balance";
 import ModalForm from "./components/modal-form";
 import TransactionsList from "./components/transactions-list";

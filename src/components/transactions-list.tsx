@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContextTransactions } from "../hooks/useContext";
 import TransactionItem from "./transaction-item";
 
-type Props = {};
-
-const TransactionsList = (props: Props) => {
+const TransactionsList = () => {
   const { filteredTransactions, setSelectedMonth, currentMonth } =
     useContextTransactions();
 
@@ -24,9 +22,13 @@ const TransactionsList = (props: Props) => {
     "Diciembre",
   ];
 
-  const [activeMonthIndex, setActiveMonthIndex] = useState<number | null>(
+  const [activeMonthIndex, setActiveMonthIndex] = useState<number | undefined>(
     currentMonth
   );
+
+  useEffect(() => {
+    setActiveMonthIndex(currentMonth);
+  }, [currentMonth]);
 
   const handleMonthClick = (month: number, index: number) => {
     setSelectedMonth(month + 1);

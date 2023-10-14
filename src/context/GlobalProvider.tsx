@@ -1,38 +1,31 @@
-import { ReactNode, useEffect, useReducer, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { useFetch } from "../hooks/useFetch";
 import { Transaction, Transactions } from "../types/globals";
 import AppReducer from "./app-reducer";
-import { GlobalContext } from "./global-state";
+
+const API_URL =
+  "http://localhost:3000/transactions?_sort=createdAt&_order=desc";
+
+const initialState: Transactions = {
+  transactions: [],
+  deleteTransaction: () => {},
+};
+export const GlobalContext = createContext<Transactions>(initialState);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
-  const { data } = useFetch(
-    "http://localhost:3000/transactions?_sort=createdAt&_order=desc"
-  );
-  const [state, dispatch] = useReducer(AppReducer, { transactions: [] });
+  const { data } = useFetch(API_URL);
+  const [state, dispatch] = useReducer(AppReducer, initialState);
   const [filteredTransactions, setFilteredTransactions] = useState<
     Transaction[] | undefined
   >();
 
-  useEffect(() => {
-    if (data) {
-      dispatch({ type: "SET_TRANSACTIONS", payload: data });
-    }
-  }, [data]);
-
-  function deleteTransaction(id: string) {
-    dispatch({
-      type: "DELETE_TRANSACTION",
-      payload: id,
-    });
-  }
-  function addTransaction(transaction: Transaction) {
-    dispatch({
-      type: "ADD_TRANSACTION",
-      payload: transaction,
-    });
-  }
-  const currentDate = new Date();
-  const currentMonth = currentDate.getMonth();
+  const currentMonth = new Date().getMonth();
   const [selectedMonth, setSelectedMonth] = useState<number | null>(
     currentMonth
   );
@@ -46,6 +39,12 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
       return transactionDate.getMonth() === targetMonth;
     });
   };
+
+  useEffect(() => {
+    if (data) {
+      dispatch({ type: "SET_TRANSACTIONS", payload: data });
+    }
+  }, [data]);
 
   useEffect(() => {
     if (data) {
@@ -65,17 +64,32 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     );
   }, [state, selectedMonth]);
 
+  function deleteTransaction(id: string) {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  }
+  function addTransaction(transaction: Transaction) {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction,
+    });
+  }
+
+  const contextValue: Transactions = {
+    ...state,
+    deleteTransaction,
+    addTransaction,
+    filteredTransactions,
+    setFilteredTransactions,
+    selectedMonth,
+    setSelectedMonth,
+    currentMonth,
+  };
+
   return (
-    <GlobalContext.Provider
-      value={{
-        deleteTransaction,
-        addTransaction,
-        filteredTransactions,
-        setFilteredTransactions,
-        selectedMonth,
-        setSelectedMonth,
-        currentMonth,
-      }}>
+    <GlobalContext.Provider value={contextValue}>
       {children}
     </GlobalContext.Provider>
   );
