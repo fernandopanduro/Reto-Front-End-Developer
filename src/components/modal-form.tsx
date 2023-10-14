@@ -49,7 +49,7 @@ function ModalForm() {
         size="sm"
         keyboard={false}>
         <Modal.Header closeButton>
-          <Modal.Title className="fw-bold acent fs-2">
+          <Modal.Title className="fw-bold acent fs-3">
             Agregar Transacción
           </Modal.Title>
         </Modal.Header>
@@ -93,11 +93,14 @@ function ModalForm() {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              variant="secondary"
+              className="btn btn-dark"
+              onClick={handleClose}>
               Cancelar
             </Button>
             <Button type="submit" className="btn-modal">
-              Agregar Transacción
+              Agregar
             </Button>
           </Modal.Footer>
         </form>

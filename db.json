@@ -145,22 +145,10 @@
       "amount": 100
     },
     {
-      "id": "transaction_2023_10_2",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-10-02T00:00:00.000Z",
-      "amount": -150
-    },
-    {
       "id": "b9ff9ad3-d8e3-4e2f-9827-a71db8b41ace",
       "text": "Uber",
       "createdAt": "2023-10-14T02:58:16.221Z",
       "amount": 573
-    },
-    {
-      "id": "15b49ccd-1827-4f1d-82b0-e6eaec4db219",
-      "text": "Cena",
-      "createdAt": "2023-10-14T03:47:00.716Z",
-      "amount": -200
     },
     {
       "id": "1e40d530-b37b-44fe-a3ae-454731a28ac7",
