@@ -169,12 +169,6 @@
       "amount": -150
     },
     {
-      "id": "transaction_2023_10_3",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-10-03T00:00:00.000Z",
-      "amount": 250
-    },
-    {
       "id": "b9ff9ad3-d8e3-4e2f-9827-a71db8b41ace",
       "text": "Uber",
       "createdAt": "2023-10-14T02:58:16.221Z",
@@ -187,16 +181,16 @@
       "amount": -200
     },
     {
-      "id": "5694d9a0-f710-49e3-8538-37de613c8da5",
-      "text": "Desayuno",
-      "createdAt": "2023-10-14T08:27:29.887Z",
-      "amount": -120
-    },
-    {
       "id": "1e40d530-b37b-44fe-a3ae-454731a28ac7",
       "text": "Regalo para Lu",
       "createdAt": "2023-10-14T08:33:55.997Z",
       "amount": -200
+    },
+    {
+      "id": "67dfca9e-9595-40c9-b2c2-3236d0976de1",
+      "text": "Regalias",
+      "createdAt": "2023-10-14T10:35:56.885Z",
+      "amount": 2073
     }
   ]
 }

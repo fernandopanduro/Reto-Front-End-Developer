@@ -30,9 +30,29 @@ const TransactionsList = () => {
     setActiveMonthIndex(currentMonth);
   }, [currentMonth]);
 
-  
-
   const prevDateRef = useRef<string | null>(null);
+
+  const formatDate = (transactionDate: Date) => {
+    const now = new Date();
+    const transactionDay = transactionDate.getDate();
+    const transactionMonth = transactionDate.getMonth();
+
+    if (
+      transactionDate.getFullYear() === now.getFullYear() &&
+      transactionDate.getMonth() === now.getMonth() &&
+      transactionDate.getDate() === now.getDate()
+    ) {
+      return `Hoy - ${transactionDay} ${monthNames[transactionMonth - 1]}.`;
+    } else if (
+      transactionDate.getFullYear() === now.getFullYear() &&
+      transactionDate.getMonth() === now.getMonth() &&
+      transactionDate.getDate() === now.getDate() - 1
+    ) {
+      return `Ayer - ${transactionDay} ${monthNames[transactionMonth - 1]}.`;
+    } else {
+      return `${transactionDay} ${monthNames[transactionMonth - 1]}.`;
+    }
+  };
 
   return (
     <>
@@ -62,9 +82,8 @@ const TransactionsList = () => {
           </p>
         )}
         {filteredTransactions.map(transaction => {
-          const formattedDate = new Date(
-            transaction.createdAt
-          ).toLocaleDateString();
+          const transactionDate = new Date(transaction.createdAt);
+          const formattedDate = formatDate(transactionDate);
           const showDate = prevDateRef.current !== formattedDate;
           prevDateRef.current = formattedDate;
           return (
