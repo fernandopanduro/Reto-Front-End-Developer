@@ -185,6 +185,18 @@
       "text": "Cena",
       "createdAt": "2023-10-14T03:47:00.716Z",
       "amount": -200
+    },
+    {
+      "id": "5694d9a0-f710-49e3-8538-37de613c8da5",
+      "text": "Desayuno",
+      "createdAt": "2023-10-14T08:27:29.887Z",
+      "amount": -120
+    },
+    {
+      "id": "1e40d530-b37b-44fe-a3ae-454731a28ac7",
+      "text": "Regalo para Lu",
+      "createdAt": "2023-10-14T08:33:55.997Z",
+      "amount": -200
     }
   ]
 }

@@ -1,45 +1,41 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { useFetch } from "../hooks/useFetch";
+import { Transaction, Transactions } from "../types/globals";
 import AppReducer from "./app-reducer";
 
-export const GlobalContext = createContext();
+const API_URL =
+  "http://localhost:3000/transactions?_sort=createdAt&_order=desc";
 
-export const GlobalProvider = ({ children }: any) => {
-  const { data } = useFetch(
-    "http://localhost:3000/transactions?_sort=createdAt&_order=desc"
-  );
-  const [state, dispatch] = useReducer(AppReducer, { transactions: [] });
-  const [filteredTransactions, setFilteredTransactions] = useState();
+const initialState: Transactions = {
+  transactions: [],
+  deleteTransaction: () => {},
+};
 
-  useEffect(() => {
-    if (data) {
-      dispatch({ type: "SET_TRANSACTIONS", payload: data });
-    }
-  }, [data]);
+export const GlobalContext = createContext<Transactions>(initialState);
 
-  function deleteTransaction(id: string) {
-    dispatch({
-      type: "DELETE_TRANSACTION",
-      payload: id,
-    });
-  }
-  function addTransaction(transaction: any) {
-    dispatch({
-      type: "ADD_TRANSACTION",
-      payload: transaction,
-    });
-  }
-  const currentDate = new Date();
-  const currentMonth = currentDate.getMonth();
+export const GlobalProvider = ({ children }: { children: ReactNode }) => {
+  const { data } = useFetch(API_URL);
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [filteredTransactions, setFilteredTransactions] = useState<
+    Transaction[] | undefined
+  >();
+
+  const currentMonth = new Date().getMonth();
   const [selectedMonth, setSelectedMonth] = useState<number | null>(
     currentMonth
   );
 
-  const filterTransactionsByMonth = (
-    transactions: any,
+  const filterTransactions = (
+    transactions: Transactions,
     targetMonth: number
-  ) => {
-    return transactions.filter(transaction => {
+  ): Transaction[] => {
+    return transactions.transactions.filter(transaction => {
       const transactionDate = new Date(transaction.createdAt);
       return transactionDate.getMonth() === targetMonth;
     });
@@ -47,10 +43,16 @@ export const GlobalProvider = ({ children }: any) => {
 
   useEffect(() => {
     if (data) {
+      dispatch({ type: "SET_TRANSACTIONS", payload: data });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (data) {
       setFilteredTransactions(
         selectedMonth !== null
-          ? filterTransactionsByMonth(data, selectedMonth)
-          : filterTransactionsByMonth(data, currentMonth)
+          ? filterTransactions(data, selectedMonth)
+          : filterTransactions(data, currentMonth)
       );
     }
   }, [data, selectedMonth, state]);
@@ -58,22 +60,37 @@ export const GlobalProvider = ({ children }: any) => {
   useEffect(() => {
     setFilteredTransactions(
       selectedMonth !== null
-        ? filterTransactionsByMonth(state.transactions, selectedMonth)
-        : filterTransactionsByMonth(state.transactions, currentMonth)
+        ? filterTransactions(state, selectedMonth)
+        : filterTransactions(state, currentMonth)
     );
   }, [state, selectedMonth]);
 
+  function deleteTransaction(id: string) {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  }
+  function addTransaction(transaction: Transaction) {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: transaction,
+    });
+  }
+
+  const contextValue: Transactions = {
+    ...state,
+    deleteTransaction,
+    addTransaction,
+    filteredTransactions,
+    setFilteredTransactions,
+    selectedMonth,
+    setSelectedMonth,
+    currentMonth,
+  };
+
   return (
-    <GlobalContext.Provider
-      value={{
-        deleteTransaction,
-        addTransaction,
-        filteredTransactions,
-        setFilteredTransactions,
-        selectedMonth,
-        setSelectedMonth,
-        currentMonth,
-      }}>
+    <GlobalContext.Provider value={contextValue}>
       {children}
     </GlobalContext.Provider>
   );
