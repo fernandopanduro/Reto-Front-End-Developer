@@ -4,7 +4,7 @@ Este proyecto es parte de un reto para Disrupción MX.
 
 ## Descargar e Iniciar el Proyecto
 
-Para comenzar con el proyecto, sigue estos pasos:
+Para comenzar con el proyecto desde terminal, sigue estos pasos:
 
 1. **Clonar el Repositorio**:
    ```bash
