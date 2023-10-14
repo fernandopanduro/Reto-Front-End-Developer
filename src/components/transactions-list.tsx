@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useContextTransactions } from "../hooks/useContext";
 import TransactionItem from "./transaction-item";
 
@@ -30,10 +30,9 @@ const TransactionsList = () => {
     setActiveMonthIndex(currentMonth);
   }, [currentMonth]);
 
-  const handleMonthClick = (month: number, index: number) => {
-    setSelectedMonth(month + 1);
-    setActiveMonthIndex(index + 1);
-  };
+  
+
+  const prevDateRef = useRef<string | null>(null);
 
   return (
     <>
@@ -46,7 +45,10 @@ const TransactionsList = () => {
                   index + 1 === activeMonthIndex ? "item-month--current" : ""
                 }`}
                 key={index}
-                onClick={() => handleMonthClick(index, index)}>
+                onClick={() => {
+                  setSelectedMonth(index + 1);
+                  setActiveMonthIndex(index + 1);
+                }}>
                 {monthName}
               </li>
             ))}
@@ -59,14 +61,27 @@ const TransactionsList = () => {
             <strong>No hay Movimientos</strong>
           </p>
         )}
-        {filteredTransactions.map(transaction => (
-          <TransactionItem
-            key={transaction.id}
-            id={transaction.id}
-            label={transaction.text}
-            amount={transaction.amount}
-          />
-        ))}
+        {filteredTransactions.map(transaction => {
+          const formattedDate = new Date(
+            transaction.createdAt
+          ).toLocaleDateString();
+          const showDate = prevDateRef.current !== formattedDate;
+          prevDateRef.current = formattedDate;
+          return (
+            <div key={transaction.id}>
+              {showDate && (
+                <p className="mb-0">
+                  <strong>{formattedDate}</strong>
+                </p>
+              )}
+              <TransactionItem
+                id={transaction.id}
+                label={transaction.text}
+                amount={transaction.amount}
+              />
+            </div>
+          );
+        })}
       </div>
     </>
   );
