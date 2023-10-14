@@ -37,7 +37,7 @@ function ModalForm() {
     <>
       <Button
         onClick={handleShow}
-        className="fw-bold btn-modal fixed-bottom mb-4 w-75 mx-auto">
+        className="fw-bold btn-modal btn-modal--add fixed-bottom mb-4 mx-auto">
         Agregar Movimiento
       </Button>
 

@@ -14,7 +14,7 @@ const TransactionItem = ({ label, amount, id }: Props) => {
           className={`circle ${
             isPositiveAmount ? "circleGreen" : "circleRed"
           }`}></div>
-        <h3 className="fs-6 mb-0">{label}</h3>
+        <h3 className="fs-6 fw-semibold mb-0">{label}</h3>
       </div>
       <div>
         <p

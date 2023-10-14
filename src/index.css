@@ -63,6 +63,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 header nav {
@@ -96,6 +98,12 @@ header li {
   cursor: pointer;
   color: white;
   font-weight: bold;
+}
+
+.text-analytics {
+  line-height: normal;
+  font-size: 0.7rem;
+  opacity: 0.5;
 }
 
 .green {
@@ -164,6 +172,11 @@ header li {
 
 .btn-modal {
   background-color: var(--acent);
+}
+
+.btn-modal--add {
+  width: 70%;
+  max-width: 340px;
 }
 
 /* Form */

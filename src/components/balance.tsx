@@ -1,3 +1,4 @@
+import { GoChevronDown } from "react-icons/go";
 import { useContextTransactions } from "../hooks/useContext";
 
 type Props = {};
@@ -36,8 +37,9 @@ const Balance = (props: Props) => {
           <strong className="red fs-4">-${expense}</strong>
         </div>
       </div>
-      <div className="w-100 d-flex justify-content-center">
-        <span className="text-center">Ver analíticas</span>
+      <div className="w-100 d-flex align-items-center justify-content-center flex-column">
+        <span className="text-center text-analytics">Ver analíticas</span>
+        <GoChevronDown className="opacity-75" />
       </div>
     </div>
   );
