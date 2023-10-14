@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --acent: #4a65a3;
+  --color-red: #cb6a6c;
+  --color-green: #88c281;
+}
+
+* {
+  font-family: "PT Sans", sans-serif;
+}
+
+html {
+  min-height: 100vh;
+  background-color: #f3f9fe;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: #f3f9fe;
+  min-height: 100vh;
+  padding-block: 90px;
+}
+
+main {
+  background-color: #f3f9fe;
+  width: 375px;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  background-color: #4a65a3;
+}
+
+header ul {
+  margin-bottom: 0;
+}
+
+header li {
+  cursor: pointer;
+  color: white;
+}
+
+.green {
+  color: var(--color-green);
+}
+
+.red {
+  color: var(--color-red);
+}
+
+.circle {
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+.circleRed {
+  background-color: rgb(239 144 144);
+}
+.circleGreen {
+  background-color: rgb(141 211 148);
+}

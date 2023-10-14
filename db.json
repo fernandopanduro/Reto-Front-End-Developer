@@ -1,0 +1,184 @@
+{
+  "transactions": [
+    {
+      "id": "transaction_2023_1_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "amount": 55
+    },
+    {
+      "id": "transaction_2023_1_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-01-02T00:00:00.000Z",
+      "amount": -342
+    },
+    {
+      "id": "transaction_2023_1_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-01-03T00:00:00.000Z",
+      "amount": 120
+    },
+    {
+      "id": "transaction_2023_2_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-02-01T00:00:00.000Z",
+      "amount": -210
+    },
+    {
+      "id": "transaction_2023_2_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-02-02T00:00:00.000Z",
+      "amount": 400
+    },
+    {
+      "id": "transaction_2023_2_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-02-03T00:00:00.000Z",
+      "amount": -150
+    },
+    {
+      "id": "transaction_2023_3_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-03-01T00:00:00.000Z",
+      "amount": 300
+    },
+    {
+      "id": "transaction_2023_3_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-03-02T00:00:00.000Z",
+      "amount": -80
+    },
+    {
+      "id": "transaction_2023_3_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-03-03T00:00:00.000Z",
+      "amount": -120
+    },
+    {
+      "id": "transaction_2023_4_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-04-01T00:00:00.000Z",
+      "amount": -180
+    },
+    {
+      "id": "transaction_2023_4_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-04-02T00:00:00.000Z",
+      "amount": 230
+    },
+    {
+      "id": "transaction_2023_4_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-04-03T00:00:00.000Z",
+      "amount": 50
+    },
+    {
+      "id": "transaction_2023_5_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-05-01T00:00:00.000Z",
+      "amount": 100
+    },
+    {
+      "id": "transaction_2023_5_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-05-02T00:00:00.000Z",
+      "amount": -300
+    },
+    {
+      "id": "transaction_2023_5_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-05-03T00:00:00.000Z",
+      "amount": 180
+    },
+    {
+      "id": "transaction_2023_6_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-06-01T00:00:00.000Z",
+      "amount": 90
+    },
+    {
+      "id": "transaction_2023_6_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-06-02T00:00:00.000Z",
+      "amount": -120
+    },
+    {
+      "id": "transaction_2023_6_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-06-03T00:00:00.000Z",
+      "amount": 300
+    },
+    {
+      "id": "transaction_2023_7_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-07-01T00:00:00.000Z",
+      "amount": 150
+    },
+    {
+      "id": "transaction_2023_7_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-07-02T00:00:00.000Z",
+      "amount": -220
+    },
+    {
+      "id": "transaction_2023_7_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-07-03T00:00:00.000Z",
+      "amount": 75
+    },
+    {
+      "id": "transaction_2023_8_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-08-01T00:00:00.000Z",
+      "amount": -120
+    },
+    {
+      "id": "transaction_2023_8_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-08-02T00:00:00.000Z",
+      "amount": 280
+    },
+    {
+      "id": "transaction_2023_8_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-08-03T00:00:00.000Z",
+      "amount": 90
+    },
+    {
+      "id": "transaction_2023_9_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-09-01T00:00:00.000Z",
+      "amount": 200
+    },
+    {
+      "id": "transaction_2023_9_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-09-02T00:00:00.000Z",
+      "amount": -180
+    },
+    {
+      "id": "transaction_2023_9_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-09-03T00:00:00.000Z",
+      "amount": 300
+    },
+    {
+      "id": "transaction_2023_10_1",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-10-01T00:00:00.000Z",
+      "amount": 100
+    },
+    {
+      "id": "transaction_2023_10_2",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-10-02T00:00:00.000Z",
+      "amount": -150
+    },
+    {
+      "id": "transaction_2023_10_3",
+      "text": "Ejemplo de transacción",
+      "createdAt": "2023-10-03T00:00:00.000Z",
+      "amount": 250
+    }
+  ]
+}
