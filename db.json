@@ -1,24 +1,6 @@
 {
   "transactions": [
     {
-      "id": "transaction_2023_1_2",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-01-02T00:00:00.000Z",
-      "amount": -342
-    },
-    {
-      "id": "transaction_2023_1_3",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-01-03T00:00:00.000Z",
-      "amount": 120
-    },
-    {
-      "id": "transaction_2023_2_1",
-      "text": "Ejemplo de transacción",
-      "createdAt": "2023-02-01T00:00:00.000Z",
-      "amount": -210
-    },
-    {
       "id": "transaction_2023_2_2",
       "text": "Ejemplo de transacción",
       "createdAt": "2023-02-02T00:00:00.000Z",
@@ -33,7 +15,7 @@
     {
       "id": "transaction_2023_3_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-03-01T00:00:00.000Z",
+      "createdAt": "2023-02-25T00:00:00.000Z",
       "amount": 300
     },
     {
@@ -51,7 +33,7 @@
     {
       "id": "transaction_2023_4_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-04-01T00:00:00.000Z",
+      "createdAt": "2023-03-25T00:00:00.000Z",
       "amount": -180
     },
     {
@@ -69,7 +51,7 @@
     {
       "id": "transaction_2023_5_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-05-01T00:00:00.000Z",
+      "createdAt": "2023-04-12T00:00:00.000Z",
       "amount": 100
     },
     {
@@ -87,7 +69,7 @@
     {
       "id": "transaction_2023_6_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-06-01T00:00:00.000Z",
+      "createdAt": "2023-05-07T00:00:00.000Z",
       "amount": 90
     },
     {
@@ -105,7 +87,7 @@
     {
       "id": "transaction_2023_7_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-07-01T00:00:00.000Z",
+      "createdAt": "2023-06-11T00:00:00.000Z",
       "amount": 150
     },
     {
@@ -123,7 +105,7 @@
     {
       "id": "transaction_2023_8_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-08-01T00:00:00.000Z",
+      "createdAt": "2023-07-03T00:00:00.000Z",
       "amount": -120
     },
     {
@@ -141,7 +123,7 @@
     {
       "id": "transaction_2023_9_1",
       "text": "Ejemplo de transacción",
-      "createdAt": "2023-09-01T00:00:00.000Z",
+      "createdAt": "2023-08-03T00:00:00.000Z",
       "amount": 200
     },
     {

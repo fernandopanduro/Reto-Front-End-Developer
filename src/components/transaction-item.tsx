@@ -11,8 +11,8 @@ const TransactionItem = ({ label, amount, id }: Props) => {
     <div className="shadow rounded-3 bg-white d-flex justify-content-between align-items-center px-3 py-2">
       <div className="d-flex align-items-center gap-2">
         <div
-          className={`circle ${
-            isPositiveAmount ? "circleGreen" : "circleRed"
+          className={`icon ${
+            isPositiveAmount ? "squareGreen" : "circleRed"
           }`}></div>
         <h3 className="fs-6 fw-semibold mb-0">{label}</h3>
       </div>

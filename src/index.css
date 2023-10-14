@@ -5,26 +5,10 @@
   --color-red: #cb6a6c;
   --color-green: #88c281;
   --color-like: rgb(107 129 240);
-
-  /* Colors */
-  --white: #fff;
   --black: #000;
-  --black-kia: #04121f;
-  --blue-hover: #0f2b45;
-  --gray-light: #f9f9f9;
 
   /* Transition */
   --transition-duration: 0.3s;
-
-  /* Font Size */
-  --fz-xxl: clamp(3.666rem, 3.142rem + 2.62vw, 5.5rem);
-  --fz-xl: clamp(2rem, 1.7143rem + 1.4286vw, 3rem);
-  --fz-l: clamp(1.666rem, 1.4277rem + 1.1914vw, 2.5rem);
-  --fz-md: clamp(1.333rem, 1.1424rem + 0.9529vw, 2rem);
-  --fz-normal: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
-  --fz-s: clamp(0.666rem, 0.5706rem + 0.4771vw, 1rem);
-  --fz-xs: clamp(0.5416rem, 0.4642rem + 0.387vw, 0.8125rem);
-  --fz-xxs: clamp(0.5rem, 0.4286rem + 0.3571vw, 0.75rem);
 }
 
 * {
@@ -118,23 +102,28 @@ header li {
   color: var(--acent);
 }
 
-.circle {
+.icon {
   height: 36px;
   width: 36px;
-  border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
   filter: blur(1px);
   -webkit-filter: blur(1px);
 }
 
 .circleRed {
   background-color: rgb(239 144 144);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
-.circleGreen {
+.squareGreen {
   background-color: rgb(141 211 148);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .balanced {
@@ -192,7 +181,7 @@ header li {
   background-color: transparent;
   border: none;
   outline: none;
-  border-bottom: 1px solid var(--black-kia);
+  border-bottom: 1px solid var(--black);
   transition: all 0.5s;
 }
 
