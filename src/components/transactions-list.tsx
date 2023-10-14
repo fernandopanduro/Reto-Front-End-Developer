@@ -52,6 +52,11 @@ const TransactionsList = (props: Props) => {
         </nav>
       </header>
       <div className="d-flex flex-column gap-2">
+        {filteredTransactions.length === 0 && (
+          <p className="text-center mb-0">
+            <strong>No hay Movimientos</strong>
+          </p>
+        )}
         {filteredTransactions.map(transaction => (
           <TransactionItem
             key={transaction.id}
